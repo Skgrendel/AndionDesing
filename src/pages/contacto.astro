@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -52,7 +52,7 @@ import Layout from "../layouts/Layout.astro";
         <div
           class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl border-2 border-green-500 p-8 text-center hover:shadow-lg transition-all"
         >
-          <div class="text-6xl mb-4">💬</div>
+          <div class="text-6xl mb-4"></div>
           <h3 class="text-xl font-bold text-green-700 mb-2">WhatsApp</h3>
           <p class="text-gray-700 text-sm mb-6">Contacto directo rápido</p>
           <a
@@ -68,7 +68,7 @@ import Layout from "../layouts/Layout.astro";
         <div
           class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border-2 border-primary p-8 text-center hover:shadow-lg transition-all"
         >
-          <div class="text-6xl mb-4">📧</div>
+          <div class="text-6xl mb-4"></div>
           <h3 class="text-xl font-bold text-primary mb-2">Email</h3>
           <p class="text-gray-700 text-sm mb-6">Envíanos los detalles</p>
           <a
@@ -83,7 +83,7 @@ import Layout from "../layouts/Layout.astro";
         <div
           class="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl border-2 border-accent p-8 text-center hover:shadow-lg transition-all"
         >
-          <div class="text-6xl mb-4">☎️</div>
+          <div class="text-6xl mb-4"></div>
           <h3 class="text-xl font-bold text-accent mb-2">Teléfono</h3>
           <p class="text-gray-700 text-sm mb-6">Habla con un especialista</p>
           <a
@@ -105,7 +105,12 @@ import Layout from "../layouts/Layout.astro";
             Completa el formulario y nos pondremos en contacto
           </p>
 
-          <form id="contactForm" class="space-y-4" netlify>
+          <form
+            action="mailto:andiondesing@gmail.com"
+            method="POST"
+            enctype="text/plain"
+            class="space-y-4"
+          >
             <!-- Fila 1: Nombre y Deporte -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- Nombre del equipo -->
@@ -137,13 +142,13 @@ import Layout from "../layouts/Layout.astro";
                   required
                 >
                   <option disabled selected>Selecciona tu deporte</option>
-                  <option>⚽ Fútbol</option>
-                  <option>🏐 Futsal</option>
-                  <option>🏀 Baloncesto</option>
-                  <option>🏐 Voleibol</option>
-                  <option>⚾ Béisbol</option>
-                  <option>🥎 Softball</option>
-                  <option>🎯 Otro</option>
+                  <option> Fútbol</option>
+                  <option> Futsal</option>
+                  <option> Baloncesto</option>
+                  <option> Voleibol</option>
+                  <option> Béisbol</option>
+                  <option> Softball</option>
+                  <option> Otro</option>
                 </select>
               </div>
             </div>
@@ -213,21 +218,6 @@ import Layout from "../layouts/Layout.astro";
                 name="message"></textarea>
             </div>
 
-            <!-- Archivos adjuntos -->
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text text-sm font-semibold text-secondary"
-                  >Adjunta logo o referencia (opcional)</span
-                >
-              </label>
-              <input
-                type="file"
-                class="file-input border-2 border-gray-300 bg-white text-sm w-full"
-                name="attachment"
-                accept="image/*,.pdf"
-              />
-            </div>
-
             <!-- Checkbox Privacidad -->
             <div class="form-control">
               <label class="label cursor-pointer justify-start gap-3">
@@ -271,7 +261,7 @@ import Layout from "../layouts/Layout.astro";
             </button>
 
             <p class="text-xs text-gray-500 text-center">
-              ✓ Respuesta garantizada dentro de 24 horas
+               Respuesta garantizada dentro de 24 horas
             </p>
           </form>
         </div>
@@ -294,7 +284,7 @@ import Layout from "../layouts/Layout.astro";
           class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border border-primary/20 p-6"
         >
           <h3 class="text-lg font-bold text-primary mb-3">
-            ⏱️ ¿Cuál es el tiempo de entrega?
+             ¿Cuál es el tiempo de entrega?
           </h3>
           <p class="text-gray-700 text-sm">
             Entre 10-15 días hábiles después de aprobar el diseño. Te
@@ -306,7 +296,7 @@ import Layout from "../layouts/Layout.astro";
           class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-500/20 p-6"
         >
           <h3 class="text-lg font-bold text-green-600 mb-3">
-            🔄 ¿Puedo hacer cambios al diseño?
+             ¿Puedo hacer cambios al diseño?
           </h3>
           <p class="text-gray-700 text-sm">
             Sí, ofrecemos revisiones ilimitadas hasta que quedes completamente
@@ -318,10 +308,10 @@ import Layout from "../layouts/Layout.astro";
           class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-500/20 p-6"
         >
           <h3 class="text-lg font-bold text-purple-600 mb-3">
-            💰 ¿Qué incluye la cotización?
+             ¿Qué incluye la cotización?
           </h3>
           <p class="text-gray-700 text-sm">
-            Diseño personalizado, sublimación premium, materiales de calidad y
+            Diseño personalizado, sublimazión premium, materiales de calidad y
             empaque profesional.
           </p>
         </div>
@@ -330,7 +320,7 @@ import Layout from "../layouts/Layout.astro";
           class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border border-orange-500/20 p-6"
         >
           <h3 class="text-lg font-bold text-orange-600 mb-3">
-            📦 ¿Hay cantidad mínima?
+             ¿Hay cantidad mínima?
           </h3>
           <p class="text-gray-700 text-sm">
             Recomendamos mínimo 10-12 uniformes para mejores precios. Consulta
@@ -354,68 +344,3 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 </Layout>
-
-<script>
-  const form = document.getElementById("contactForm") as HTMLFormElement;
-
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      try {
-        const formData = new FormData(form);
-
-        const data = {
-          teamName: formData.get("teamName"),
-          sport: formData.get("sport"),
-          quantity: parseInt(formData.get("quantity") as string),
-          email: formData.get("email"),
-          phone: formData.get("phone"),
-          message: formData.get("message") || "",
-        };
-
-        // Mostrar estado de envío
-        const submitBtn = form.querySelector(
-          'button[type="submit"]'
-        ) as HTMLButtonElement;
-        const originalText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Enviando...";
-
-        // Enviar datos a la API
-        const response = await fetch("/.netlify/functions/submit-contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
-
-        const result = await response.json();
-
-        if (response.ok) {
-          // Mostrar confirmación
-          alert(
-            "¡Gracias! Tu solicitud ha sido enviada. Nos contactaremos dentro de 24 horas."
-          );
-          form.reset();
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        } else {
-          alert("Error: " + (result.error || "No se pudo enviar la solicitud"));
-          console.error("Error en la respuesta:", result);
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }
-      } catch (error) {
-        console.error("Error al enviar formulario:", error);
-        alert("Error al enviar la solicitud. Por favor, intenta de nuevo.");
-        const submitBtn = form.querySelector(
-          'button[type="submit"]'
-        ) as HTMLButtonElement;
-        submitBtn.textContent = "Enviar Solicitud";
-        submitBtn.disabled = false;
-      }
-    });
-  }
-</script>
