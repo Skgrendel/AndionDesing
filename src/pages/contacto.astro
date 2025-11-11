@@ -359,32 +359,63 @@ import Layout from "../layouts/Layout.astro";
   const form = document.getElementById("contactForm") as HTMLFormElement;
 
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const formData = new FormData(form);
-      const colors =
-        Array.from(formData.getAll("colors")).join(", ") || "No especificado";
+      try {
+        const formData = new FormData(form);
 
-      const message = `
-🎯 Nueva Solicitud de Cotización:
+        const data = {
+          teamName: formData.get("teamName"),
+          sport: formData.get("sport"),
+          quantity: parseInt(formData.get("quantity") as string),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          message: formData.get("message") || "",
+        };
 
-👥 Equipo: ${formData.get("teamName")}
-🏆 Deporte: ${formData.get("sport")}
-📦 Cantidad: ${formData.get("quantity")} uniformes
-📧 Email: ${formData.get("email")}
-📱 Teléfono: ${formData.get("phone")}
-🎨 Colores preferidos: ${colors}
-💭 Mensaje: ${formData.get("message") || "Sin mensaje adicional"}
-      `;
+        // Mostrar estado de envío
+        const submitBtn = form.querySelector(
+          'button[type="submit"]'
+        ) as HTMLButtonElement;
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando...";
 
-      console.log(message);
+        // Enviar datos a la API
+        const response = await fetch("/.netlify/functions/submit-contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
 
-      // Mostrar confirmación
-      alert(
-        "¡Gracias! Tu solicitud ha sido enviada. Nos contactaremos dentro de 24 horas."
-      );
-      form.reset();
+        const result = await response.json();
+
+        if (response.ok) {
+          // Mostrar confirmación
+          alert(
+            "¡Gracias! Tu solicitud ha sido enviada. Nos contactaremos dentro de 24 horas."
+          );
+          form.reset();
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        } else {
+          alert("Error: " + (result.error || "No se pudo enviar la solicitud"));
+          console.error("Error en la respuesta:", result);
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      } catch (error) {
+        console.error("Error al enviar formulario:", error);
+        alert("Error al enviar la solicitud. Por favor, intenta de nuevo.");
+        const submitBtn = form.querySelector(
+          'button[type="submit"]'
+        ) as HTMLButtonElement;
+        submitBtn.textContent = "Enviar Solicitud";
+        submitBtn.disabled = false;
+      }
     });
   }
 </script>
