@@ -1,0 +1,65 @@
+---
+// Navbar.astro - Componente de navegación fijo
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <div class="w-10 h-10 bg-gradient-to-br from-primary via-accent to-cyan-400 rounded-lg flex items-center justify-center shadow-md">
+        <span class="text-white font-bold text-lg">AD</span>
+      </div>
+      <div class="hidden sm:block">
+        <h1 class="text-xl font-bold text-secondary">AndionDesing</h1>
+        <p class="text-xs text-primary font-semibold">Uniformes Deportivos</p>
+      </div>
+    </a>
+
+    <!-- Menu Desktop -->
+    <div class="hidden lg:flex gap-8">
+      <a href="/" class="font-semibold text-secondary hover:text-primary transition-colors duration-200">Home</a>
+      <a href="/productos" class="font-semibold text-secondary hover:text-primary transition-colors duration-200">Productos</a>
+      <a href="/galeria" class="font-semibold text-secondary hover:text-primary transition-colors duration-200">Galería</a>
+      <a href="/contacto" class="font-semibold text-secondary hover:text-primary transition-colors duration-200">Contacto</a>
+    </div>
+
+    <!-- CTA Button Desktop -->
+    <a href="/contacto" class="hidden lg:block bg-gradient-to-r from-primary via-accent to-cyan-400 hover:shadow-xl text-white font-bold py-2.5 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+      Cotización
+    </a>
+
+    <!-- Menu Mobile -->
+    <div class="lg:hidden dropdown dropdown-end">
+      <button tabindex="0" class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current text-secondary">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <ul tabindex="0" class="dropdown-content z-50 menu p-3 shadow-2xl bg-white rounded-xl w-56 border border-slate-200">
+        <li><a href="/" class="text-slate-900 font-semibold hover:bg-primary/10 hover:text-primary py-2.5">🏠 Home</a></li>
+        <li><a href="/productos" class="text-slate-900 font-semibold hover:bg-primary/10 hover:text-primary py-2.5">📦 Productos</a></li>
+        <li><a href="/galeria" class="text-slate-900 font-semibold hover:bg-primary/10 hover:text-primary py-2.5">🖼️ Galería</a></li>
+        <li><a href="/contacto" class="text-slate-900 font-semibold hover:bg-primary/10 hover:text-primary py-2.5">💬 Contacto</a></li>
+        <li class="border-t border-slate-300 my-2"></li>
+        <li><a href="/contacto" class="bg-gradient-to-r from-primary to-accent text-white text-center font-bold py-2 rounded-lg hover:shadow-lg transition-all text-sm">Cotización</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>

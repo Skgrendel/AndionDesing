@@ -1,0 +1,93 @@
+---
+// Footer.astro - Pie de página informativo
+---
+
+<footer class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white mt-20">
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <!-- Sobre nosotros -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+          AndionDesing
+        </h3>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Expertos en sublimación y diseño de uniformes deportivos personalizados. Calidad profesional, diseño exclusivo, identidad deportiva única.
+        </p>
+      </div>
+
+      <!-- Enlaces rápidos -->
+      <div>
+        <h4 class="text-lg font-bold mb-4 text-primary">Menú</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="/" class="text-gray-300 hover:text-primary transition-colors duration-300">→ Home</a></li>
+          <li><a href="/productos" class="text-gray-300 hover:text-primary transition-colors duration-300">→ Productos</a></li>
+          <li><a href="/galeria" class="text-gray-300 hover:text-primary transition-colors duration-300">→ Galería</a></li>
+          <li><a href="/contacto" class="text-gray-300 hover:text-primary transition-colors duration-300">→ Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Categorías -->
+      <div>
+        <h4 class="text-lg font-bold mb-4 text-accent">Deportes</h4>
+        <ul class="flex flex-col gap-3">
+          <li class="text-gray-300 text-sm">⚽ Fútbol y Futsal</li>
+          <li class="text-gray-300 text-sm">🏀 Baloncesto</li>
+          <li class="text-gray-300 text-sm">🏐 Voleibol</li>
+          <li class="text-gray-300 text-sm">⚾ Béisbol y Softball</li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div>
+        <h4 class="text-lg font-bold mb-4 text-cyan-400">Contacto</h4>
+        <div class="flex flex-col gap-4 text-sm">
+          <div>
+            <p class="text-gray-400 mb-1">Email</p>
+            <a href="mailto:info@andiondesing.com" class="text-primary hover:text-accent transition-colors">
+              info@andiondesing.com
+            </a>
+          </div>
+          <div>
+            <p class="text-gray-400 mb-1">WhatsApp</p>
+            <a href="https://wa.me/?text=Hola%20AndionDesing" target="_blank" class="text-primary hover:text-accent transition-colors">
+              Contáctanos por WhatsApp
+            </a>
+          </div>
+          <div class="text-gray-400">
+            <p class="text-xs">✨ Diseños exclusivos</p>
+            <p class="text-xs">📦 Producción limitada</p>
+            <p class="text-xs">🏆 Calidad profesional</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-slate-700 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+        <p class="text-center md:text-left">
+          &copy; 2025 AndionDesing. Todos los derechos reservados.
+        </p>
+        <div class="flex gap-6 justify-center">
+          <a href="#" class="hover:text-primary transition-colors">Términos</a>
+          <a href="#" class="hover:text-primary transition-colors">Privacidad</a>
+          <a href="#" class="hover:text-primary transition-colors">Cookies</a>
+        </div>
+      </div>
+
+      <!-- Social badges -->
+      <div class="flex justify-center gap-4 mt-6">
+        <div class="inline-block px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs text-primary font-semibold">
+          Premium Quality
+        </div>
+        <div class="inline-block px-3 py-1 bg-accent/10 border border-accent/20 rounded-full text-xs text-accent font-semibold">
+          100% Satisfaction
+        </div>
+        <div class="inline-block px-3 py-1 bg-cyan-400/10 border border-cyan-400/20 rounded-full text-xs text-cyan-300 font-semibold">
+          Fast Delivery
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

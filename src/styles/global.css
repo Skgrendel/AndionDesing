@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #d61e3e;
+  --secondary: #1a1a2e;
+  --accent: #ffb700;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: var(--secondary);
+}
+
+/* Estilos personalizados */
+.hero-text {
+  @apply text-4xl md:text-6xl font-sport font-bold tracking-wider;
+}
+
+.card-sport {
+  @apply rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+}
+
+.btn-cta {
+  @apply bg-primary hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-cta-secondary {
+  @apply bg-secondary hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 border-2 border-accent;
+}
+
+.badge-exclusive {
+  @apply bg-accent text-black text-xs font-bold px-4 py-2 rounded-full;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  @apply transform -translate-y-2 shadow-2xl;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-auto;
+}
+
+nav {
+  @apply fixed top-0 left-0 right-0 z-40 bg-white shadow-md;
+}
+
+body {
+  @apply pt-20;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gallery-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.gallery-item {
+  @apply cursor-pointer transition-transform duration-300 hover:scale-105;
+}
+
+.floating-btn {
+  @apply fixed bottom-6 right-6 z-30 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 transform hover:scale-110;
+}
+
+.text-clamp {
+  @apply line-clamp-3;
+}
+
+.benefit-badge {
+  @apply flex items-center gap-2 text-sm font-medium text-primary;
+}
+
+.benefit-badge::before {
+  content: '✓';
+  @apply text-lg font-bold;
+}

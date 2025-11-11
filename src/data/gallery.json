@@ -1,0 +1,76 @@
+{
+  "galleries": [
+    {
+      "id": "modal-1",
+      "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=500&fit=crop",
+      "title": "Equipo de Fútbol San Vicente - Diseño Premium",
+      "sport": "Fútbol",
+      "description": "Uniformes de fútbol con sublimación de alta calidad. Diseño exclusivo que combina colores vibrantes con detalles personalizados. Cada jersey es una obra maestra con patrones geométricos únicos.",
+      "features": ["Colores brillantes duraderos", "Sublimación HD", "Materiales premium", "Diseño único"],
+      "featured": true
+    },
+    {
+      "id": "modal-2",
+      "image": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=500&h=500&fit=crop",
+      "title": "Uniformes de Baloncesto Elite",
+      "sport": "Baloncesto",
+      "description": "Jerseys de baloncesto diseñados para máximo desempeño. Materiales técnicos con transpirabilidad superior y diseño aerodinámico.",
+      "features": ["Material coolmax", "Transpirabilidad", "Ligereza", "Durabilidad"],
+      "featured": false
+    },
+    {
+      "id": "modal-3",
+      "image": "https://images.unsplash.com/photo-1536521248902-19b3cdc4867f?w=500&h=500&fit=crop",
+      "title": "Equipo de Voleibol Femenino",
+      "sport": "Voleibol",
+      "description": "Uniformes de voleibol con diseño elegante y funcional. Cortes anatómicos femeninos con máxima libertad de movimiento.",
+      "features": ["Corte femenino", "Elasticidad", "Libertad de movimiento", "Estética deportiva"],
+      "featured": false
+    },
+    {
+      "id": "modal-4",
+      "image": "https://images.unsplash.com/photo-1577958473767-f5eca58bdf9c?w=500&h=500&fit=crop",
+      "title": "Diseño Moderno de Baloncesto",
+      "sport": "Baloncesto",
+      "description": "Uniforme de baloncesto con líneas modernas y colores de alto contraste. Perfecto para equipos que quieren destacar en la cancha.",
+      "features": ["Líneas dinámicas", "Alto contraste", "Diseño moderno", "Visibilidad"],
+      "featured": false
+    },
+    {
+      "id": "modal-5",
+      "image": "https://images.unsplash.com/photo-1622373055933-d1aa2da8ee7c?w=600&h=500&fit=crop",
+      "title": "Equipo de Béisbol Elite - Clásico",
+      "sport": "Béisbol",
+      "description": "Uniformes de béisbol con diseño clásico y profesional. Incluye jersey, pantalón y camiseta completamente personalizados.",
+      "features": ["Diseño clásico", "Protección UV", "Material durable", "Completo"],
+      "featured": true
+    },
+    {
+      "id": "modal-6",
+      "image": "https://images.unsplash.com/photo-1579952840872-86d7b814b882?w=500&h=500&fit=crop",
+      "title": "Diseño Fútbol Clásico con Estilo",
+      "sport": "Fútbol",
+      "description": "Jersey de fútbol con elementos clásicos modernizados. Colores patrimonio con detalles geométricos contemporáneos.",
+      "features": ["Diseño timeless", "Colores clásicos", "Detalles modernos", "Versátil"],
+      "featured": false
+    },
+    {
+      "id": "modal-7",
+      "image": "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=500&h=500&fit=crop",
+      "title": "Uniformes Softball Profesional",
+      "sport": "Softball",
+      "description": "Diseños elegantes y funcionales para softball. Especialmente adaptados para jugadoras profesionales con estándares internacionales.",
+      "features": ["Corte profesional", "Colores personalizables", "Flexibilidad", "Durabilidad"],
+      "featured": false
+    },
+    {
+      "id": "modal-8",
+      "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=500&fit=crop",
+      "title": "Diseño Exclusivo Futsal 2024",
+      "sport": "Futsal",
+      "description": "Uniforme de futsal con tecnología antideslizante y materiales reforzados. Diseño exclusivo para la temporada 2024.",
+      "features": ["Antideslizante", "Reforzado", "Exclusivo", "Temporada 2024"],
+      "featured": true
+    }
+  ]
+}

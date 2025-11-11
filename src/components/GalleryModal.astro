@@ -1,0 +1,82 @@
+---
+// GalleryModal.astro - Modal para galería con imagen ampliada
+interface Props {
+  id: string;
+  image: string;
+  title: string;
+  sport: string;
+}
+
+const { id, image, title, sport } = Astro.props;
+---
+
+<dialog id={id} class="modal">
+  <div class="modal-box max-w-5xl w-full bg-slate-900 border-2 border-primary/30">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 hover:bg-primary/20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </form>
+    <div class="py-8 px-4">
+      <!-- Contenedor de imagen con tamaño fijo -->
+      <div class="w-full h-96 bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg shadow-2xl border border-primary/20 flex items-center justify-center overflow-hidden mb-8">
+        <img 
+          src={image}
+          alt={title}
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+      
+      <!-- Contenido del modal -->
+      <div>
+        <h3 class="text-3xl font-bold text-white mb-4">{title}</h3>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="badge badge-lg bg-primary text-white border-0 font-semibold">{sport}</span>
+          <span class="badge badge-lg bg-accent text-white border-0 font-semibold">Diseño Exclusivo</span>
+        </div>
+        <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+          Este es un ejemplo de nuestra capacidad de sublimación de alta calidad y personalización detallada. 
+          Cada uniforme se produce con precisión profesional para garantizar la satisfacción total.
+        </p>
+        <a href="/contacto" class="btn btn-lg bg-gradient-to-r from-primary to-accent text-white hover:shadow-xl border-0 font-bold">
+          Quiero algo similar
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.5 1.5H3a1.5 1.5 0 00-1.5 1.5v14a1.5 1.5 0 001.5 1.5h14a1.5 1.5 0 001.5-1.5v-9.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </div>
+</dialog>
+
+<style>
+  .modal-box {
+    animation: modalSlideIn 0.3s ease-out;
+  }
+
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script>
+  // Script para abrir modal desde galería
+  export function openModal(modalId: string) {
+    const modal = document.getElementById(modalId) as HTMLDialogElement;
+    if (modal) {
+      modal.showModal();
+    }
+  }
+</script>

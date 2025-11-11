@@ -1,0 +1,206 @@
+---
+// pages/productos.astro - Página de productos
+import Layout from '../layouts/Layout.astro';
+import SportsCard from '../components/SportsCard.astro';
+
+const sportsData = [
+  {
+    sport: 'Fútbol',
+    image: 'https://images.unsplash.com/photo-1579952840872-86d7b814b882?w=500&h=400&fit=crop',
+    description: 'Jerseys de fútbol con tecnología de sublimación y materiales premium. Diseñados para máximo confort y desempeño. Colores vibrantes que perduran.',
+    benefits: ['Transpirabilidad optimizada', 'Costura reforzada', 'Certificado de calidad profesional']
+  },
+  {
+    sport: 'Futsal',
+    image: 'https://images.unsplash.com/photo-1579952840872-86d7b814b882?w=500&h=400&fit=crop',
+    description: 'Uniformes especializados para futsal con ajuste perfecto y movilidad sin restricciones. Material antibacterial y de rápido secado.',
+    benefits: ['Material hipoalergénico', 'Elasticidad de larga duración', 'Resistencia a rozamientos']
+  },
+  {
+    sport: 'Baloncesto',
+    image: 'https://images.unsplash.com/photo-1577958473767-f5eca58bdf9c?w=500&h=400&fit=crop',
+    description: 'Jerseys de baloncesto con tecnología coolmax y diseños que capturan la energía de tu equipo. Libertad total de movimiento.',
+    benefits: ['Transpirabilidad superior', 'Ligereza extrema', 'Resistencia a desgarre']
+  },
+  {
+    sport: 'Voleibol',
+    image: 'https://images.unsplash.com/photo-1536521248902-19b3cdc4867f?w=500&h=400&fit=crop',
+    description: 'Uniformes de voleibol elegantes y funcionales. Diseñados para jugadoras que exigen lo mejor. Máxima comodidad en saltos y movimientos.',
+    benefits: ['Elasticidad en cuatro direcciones', 'Protección UV integrada', 'Costuras planas anti-fricción']
+  },
+  {
+    sport: 'Béisbol',
+    image: 'https://images.unsplash.com/photo-1622373055933-d1aa2da8ee7c?w=500&h=400&fit=crop',
+    description: 'Equipos de béisbol completos con diseños clásicos y modernos. Jersey, pantalón y camiseta sublimados con precisión.',
+    benefits: ['Protección UV 50+', 'Durabilidad industrial', 'Costuras de clase mundial']
+  },
+  {
+    sport: 'Softball',
+    image: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=500&h=400&fit=crop',
+    description: 'Diseños de softball femeninos que combinan elegancia con rendimiento. Cada pieza sublimada para crear uniformes únicos.',
+    benefits: ['Cortes anatómicos femeninos', 'Colores personalizables sin límite', 'Acabado premium']
+  }
+];
+---
+
+<Layout title="Productos" description="Catálogo completo de uniformes deportivos personalizados para todos los deportes.">
+  <!-- Header Section -->
+  <section class="py-20 bg-gradient-to-br from-primary via-accent to-cyan-400 text-white relative overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <defs>
+          <pattern id="grid" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <path d="M 100 0 L 0 0 0 100" fill="none" stroke="white" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="400" fill="url(#grid)" />
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h1 class="text-6xl md:text-7xl font-bold mb-4">Nuestros Productos</h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+        Uniformes deportivos personalizados con sublimación de vanguardia. Cada producto es diseñado para capturar la esencia de tu equipo con exclusividad y calidad profesional.
+      </p>
+    </div>
+  </section>
+
+  <!-- Productos Grid -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sportsData.map((sport) => (
+          <SportsCard 
+            sport={sport.sport}
+            image={sport.image}
+            description={sport.description}
+            benefits={sport.benefits}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Características destacadas -->
+  <section class="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-slate-900 mb-4">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+            Por qué elegirnos
+          </span>
+        </h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Somos expertos en sublimación de uniformes deportivos con estándares internacionales de calidad
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group relative p-8 bg-white rounded-xl border-2 border-primary/30 hover:border-primary hover:shadow-xl transition-all hover:scale-105 transform duration-300">
+          <div class="absolute top-4 right-4 text-4xl opacity-20">🎨</div>
+          <div class="text-5xl mb-4">🎨</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Diseño exclusivo</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Cada uniforme es un diseño único pensado para tu equipo específico.</p>
+        </div>
+
+        <div class="group relative p-8 bg-white rounded-xl border-2 border-accent/30 hover:border-accent hover:shadow-xl transition-all hover:scale-105 transform duration-300">
+          <div class="absolute top-4 right-4 text-4xl opacity-20">✨</div>
+          <div class="text-5xl mb-4">✨</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Sublimación premium</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Tecnología de vanguardia que garantiza colores duraderos y resistentes.</p>
+        </div>
+
+        <div class="group relative p-8 bg-white rounded-xl border-2 border-cyan-400/30 hover:border-cyan-400 hover:shadow-xl transition-all hover:scale-105 transform duration-300">
+          <div class="absolute top-4 right-4 text-4xl opacity-20">🏆</div>
+          <div class="text-5xl mb-4">🏆</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Calidad profesional</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Materiales certificados y procesos de control de calidad rigurosos.</p>
+        </div>
+
+        <div class="group relative p-8 bg-white rounded-xl border-2 border-primary/30 hover:border-primary hover:shadow-xl transition-all hover:scale-105 transform duration-300">
+          <div class="absolute top-4 right-4 text-4xl opacity-20">⚡</div>
+          <div class="text-5xl mb-4">⚡</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Entrega rápida</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Plazos garantizados para que tu equipo tenga sus uniformes a tiempo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalización -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold text-slate-900 mb-4">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+            Personaliza tu uniforme
+          </span>
+        </h2>
+        <p class="text-xl text-slate-600">
+          Opciones ilimitadas para crear el uniforme perfecto para tu equipo
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl border border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold text-primary mb-4">🏃 Selecciona tu deporte</h3>
+          <p class="text-slate-600 mb-6">Elegimos los materiales y corte perfecto para tu disciplina deportiva.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-block bg-primary/20 text-primary font-semibold px-4 py-2 rounded-lg text-sm">⚽ Fútbol</span>
+            <span class="inline-block bg-primary/20 text-primary font-semibold px-4 py-2 rounded-lg text-sm">⚽ Futsal</span>
+            <span class="inline-block bg-primary/20 text-primary font-semibold px-4 py-2 rounded-lg text-sm">🏀 Baloncesto</span>
+            <span class="inline-block bg-primary/20 text-primary font-semibold px-4 py-2 rounded-lg text-sm">🏐 Voleibol</span>
+          </div>
+        </div>
+
+        <div class="p-6 bg-gradient-to-br from-accent/10 to-cyan-400/10 rounded-xl border border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold text-accent mb-4">🎨 Elige tus colores</h3>
+          <p class="text-slate-600 mb-6">Paleta ilimitada de colores con combinaciones personalizadas.</p>
+          <div class="flex gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary to-cyan-400 rounded-full border-2 border-white shadow-md"></div>
+            <div class="w-10 h-10 bg-red-500 rounded-full border-2 border-white shadow-md"></div>
+            <div class="w-10 h-10 bg-green-500 rounded-full border-2 border-white shadow-md"></div>
+            <div class="w-10 h-10 bg-yellow-400 rounded-full border-2 border-white shadow-md"></div>
+            <div class="w-10 h-10 bg-purple-500 rounded-full border-2 border-white shadow-md"></div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-gradient-to-br from-cyan-400/10 to-primary/10 rounded-xl border border-cyan-400/20 hover:border-cyan-400/40 transition-all hover:shadow-lg">
+          <h3 class="text-xl font-bold text-cyan-600 mb-4">📌 Añade tu logo</h3>
+          <p class="text-slate-600 mb-6">Logo del equipo, patrocinadores y números personalizados.</p>
+          <p class="text-sm font-semibold text-cyan-600 bg-cyan-50 px-4 py-3 rounded-lg">✓ Resolución HD garantizada</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 bg-gradient-to-r from-slate-900 via-primary/30 to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <defs>
+          <pattern id="grid-dark" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <path d="M 100 0 L 0 0 0 100" fill="none" stroke="white" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="400" fill="url(#grid-dark)" />
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-4 text-center max-w-3xl relative z-10">
+      <h2 class="text-5xl font-bold mb-6">
+        Listo para tu uniforme exclusivo
+      </h2>
+      <p class="text-xl text-gray-200 mb-10 leading-relaxed">
+        Contáctanos para recibir una cotización personalizada sin compromiso. Nuestro equipo de expertos te guiará en cada paso del proceso de diseño y sublimación.
+      </p>
+      <a href="/contacto" class="btn btn-lg bg-white text-primary hover:bg-gray-100 hover:shadow-xl border-0 font-bold px-8">
+        Solicitar cotización
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2.5 3A1.5 1.5 0 001 4.5v11A1.5 1.5 0 002.5 17h15a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0017.5 3h-15z"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

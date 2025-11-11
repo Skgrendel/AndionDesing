@@ -1,0 +1,25 @@
+---
+// src/components/FeatureGrid.astro - Grid de características
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  features: Feature[];
+  columns?: number;
+}
+
+const { features, columns = 4 } = Astro.props;
+---
+
+<div class={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${columns} gap-8`}>
+  {features.map((feature) => (
+    <div class="card bg-white border-t-4 border-primary p-6 text-center hover:shadow-lg transition-all">
+      <div class="text-4xl mb-4">{feature.icon}</div>
+      <h3 class="text-xl font-bold text-secondary mb-2">{feature.title}</h3>
+      <p class="text-gray-600 text-sm">{feature.description}</p>
+    </div>
+  ))}
+</div>

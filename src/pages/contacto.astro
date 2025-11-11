@@ -1,0 +1,695 @@
+---
+// pages/contacto.astro - Página de contacto mejorada
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contacto" description="Contacta con AndionDesing para solicitar tu cotización personalizada de uniformes deportivos.">
+  <!-- Header Hero -->
+  <section class="relative min-h-96 bg-gradient-to-br from-primary via-accent to-cyan-400 text-white overflow-hidden pt-32">
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <defs>
+          <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="20" cy="20" r="2" fill="white"/>
+          </pattern>
+        </defs>
+        <rect width="1200" height="400" fill="url(#dots)"/>
+      </svg>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4 text-center py-12">
+      <h1 class="text-5xl md:text-6xl font-sport font-bold mb-4">
+        Comencemos tu proyecto
+      </h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto">
+        Cuéntanos sobre tu equipo y recibe una cotización personalizada dentro de 24 horas
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-20 bg-gradient-to-b from-white to-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Formulario -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <h2 class="text-3xl font-sport font-bold text-secondary mb-2">Solicitud de Cotización</h2>
+            <p class="text-gray-600 mb-8">Completa el formulario y nos pondremos en contacto pronto</p>
+            
+            <form id="contactForm" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Nombre del equipo -->
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text font-semibold text-secondary">Nombre del equipo *</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Ej: Equipo de Fútbol San Vicente"
+                    class="input input-bordered focus:input-primary w-full"
+                    name="teamName"
+                    required
+                  />
+                </div>
+
+                <!-- Deporte -->
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text font-semibold text-secondary">Deporte *</span>
+                  </label>
+                  <select class="select select-bordered focus:select-primary w-full" name="sport" required>
+                    <option disabled selected>Selecciona tu deporte</option>
+                    <option>⚽ Fútbol</option>
+                    <option>🏐 Futsal</option>
+                    <option>🏀 Baloncesto</option>
+                    <option>🏐 Voleibol</option>
+                    <option>⚾ Béisbol</option>
+                    <option>🥎 Softball</option>
+                    <option>🎯 Otro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Cantidad de jugadores -->
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text font-semibold text-secondary">Cantidad de uniformes *</span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Ej: 15"
+                    class="input input-bordered focus:input-primary w-full"
+                    name="quantity"
+                    min="1"
+                    required
+                  />
+                </div>
+
+                <!-- Email de contacto -->
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text font-semibold text-secondary">Email *</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="tu@email.com"
+                    class="input input-bordered focus:input-primary w-full"
+                    name="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Teléfono / WhatsApp -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Teléfono / WhatsApp *</span>
+                </label>
+                <input
+                  type="tel"
+                  placeholder="+58 412-1234567"
+                  class="input input-bordered focus:input-primary w-full"
+                  name="phone"
+                  required
+                />
+              </div>
+
+              <!-- Descripción del proyecto -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Cuéntanos sobre tu proyecto</span>
+                </label>
+                <textarea
+                  placeholder="Colores preferidos, estilo de diseño, inspiración, presupuesto aproximado..."
+                  class="textarea textarea-bordered focus:textarea-primary h-32 w-full"
+                  name="message"
+                ></textarea>
+              </div>
+
+              <!-- Colores preferidos -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Colores preferidos (opcional)</span>
+                </label>
+                <div class="flex flex-wrap gap-3">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox checkbox-primary" name="colors" value="Red" />
+                    <span class="badge badge-lg" style="background: #ef4444;">Rojo</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox checkbox-primary" name="colors" value="Blue" />
+                    <span class="badge badge-lg" style="background: #3b82f6;">Azul</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox checkbox-primary" name="colors" value="Yellow" />
+                    <span class="badge badge-lg" style="background: #fbbf24;">Amarillo</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox checkbox-primary" name="colors" value="Green" />
+                    <span class="badge badge-lg" style="background: #22c55e;">Verde</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox checkbox-primary" name="colors" value="Black" />
+                    <span class="badge badge-lg" style="background: #1f2937;">Negro</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="checkbox checkbox-primary" name="colors" value="White" />
+                    <span class="badge badge-lg" style="background: #f3f4f6; color: black;">Blanco</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Checkbox -->
+              <div class="form-control">
+                <label class="label cursor-pointer justify-start gap-3">
+                  <input type="checkbox" class="checkbox checkbox-primary" name="terms" required />
+                  <span class="label-text">
+                    Autorizo a AndionDesing a contactarme sobre mi solicitud
+                  </span>
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-lg w-full bg-gradient-to-r from-primary via-accent to-cyan-400 hover:shadow-xl text-white font-bold border-0 mt-8">
+                Enviar Solicitud
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M3 8a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path>
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H4a1 1 0 110-2h10.586L10.293 4.707a1 1 0 010-1.414z"></path>
+                </svg>
+              </button>
+
+              <p class="text-xs text-gray-500 text-center">
+                ✓ Respuesta garantizada dentro de 24 horas
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Info de contacto directo -->
+        <div class="space-y-6">
+          <!-- WhatsApp -->
+          <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl border-2 border-green-500 p-8 text-center">
+            <div class="text-6xl mb-4">💬</div>
+            <h3 class="text-2xl font-bold text-green-700 mb-2">Chat Directo</h3>
+            <p class="text-gray-700 mb-6 text-sm">
+              ¿Preguntas rápidas? Contáctanos por WhatsApp
+            </p>
+            <a
+              href="https://wa.me/?text=Hola%20AndionDesing%20,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20vuestros%20uniformes%20deportivos%20personalizados"
+              target="_blank"
+              class="btn btn-success w-full text-white font-bold"
+            >
+              📱 WhatsApp
+            </a>
+          </div>
+
+          <!-- Email -->
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border-2 border-primary p-8 text-center">
+            <div class="text-6xl mb-4">📧</div>
+            <h3 class="text-2xl font-bold text-primary mb-2">Email</h3>
+            <p class="text-gray-700 mb-6 text-sm">
+              Envíanos los detalles de tu proyecto
+            </p>
+            <a
+              href="mailto:info@andiondesing.com"
+              class="btn btn-primary w-full text-white font-bold"
+            >
+              📨 Enviar Email
+            </a>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl border-2 border-accent p-8 text-center">
+            <div class="text-6xl mb-4">☎️</div>
+            <h3 class="text-2xl font-bold text-accent mb-2">Llamada</h3>
+            <p class="text-gray-700 mb-6 text-sm">
+              Habla directamente con un especialista
+            </p>
+            <a
+              href="tel:+584121234567"
+              class="btn btn-outline w-full font-bold text-accent border-accent hover:bg-accent hover:text-white"
+            >
+              ☎️ Llamar
+            </a>
+          </div>
+
+          <!-- Horarios -->
+          <div class="bg-slate-100 rounded-2xl p-8 text-center">
+            <div class="text-5xl mb-4">🕐</div>
+            <h3 class="text-lg font-bold text-secondary mb-4">Horarios</h3>
+            <div class="space-y-2 text-sm text-gray-700">
+              <p><strong>Lunes - Viernes:</strong><br>9:00 AM - 6:00 PM</p>
+              <p><strong>Sábado:</strong><br>10:00 AM - 4:00 PM</p>
+              <p class="text-xs mt-4 pt-4 border-t border-gray-300">
+                💬 WhatsApp disponible 24/7
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-sport font-bold text-secondary mb-4 text-center">
+        Preguntas Frecuentes
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        Respuestas a las dudas más comunes sobre nuestro proceso
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border border-primary/20 p-6">
+          <h3 class="text-lg font-bold text-primary mb-3">
+            ⏱️ ¿Cuál es el tiempo de entrega?
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Entre 10-15 días hábiles después de aprobar el diseño. Te informaremos con precisión al cotizar.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-500/20 p-6">
+          <h3 class="text-lg font-bold text-green-600 mb-3">
+            🔄 ¿Puedo hacer cambios al diseño?
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Sí, ofrecemos revisiones ilimitadas hasta que quedes completamente satisfecho.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-500/20 p-6">
+          <h3 class="text-lg font-bold text-purple-600 mb-3">
+            💰 ¿Qué incluye la cotización?
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Diseño personalizado, sublimación premium, materiales de calidad y empaque profesional.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border border-orange-500/20 p-6">
+          <h3 class="text-lg font-bold text-orange-600 mb-3">
+            📦 ¿Hay cantidad mínima?
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Recomendamos mínimo 10-12 uniformes para mejores precios. Consulta para cantidades menores.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="py-20 bg-gradient-to-r from-primary via-accent to-cyan-400 text-white">
+    <div class="container mx-auto px-4 text-center max-w-2xl">
+      <h2 class="text-4xl font-sport font-bold mb-6">
+        ¿Listo para comenzar?
+      </h2>
+      <p class="text-lg mb-8 text-white/90">
+        Cada día que esperes es un día sin tu equipo luciendo sus mejores uniformes
+      </p>
+      <button onclick="document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth' })" class="btn btn-white btn-lg font-bold">
+        Ir al formulario
+      </button>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const colors = Array.from(formData.getAll('colors')).join(', ') || 'No especificado';
+      
+      const message = `
+🎯 Nueva Solicitud de Cotización:
+
+👥 Equipo: ${formData.get('teamName')}
+🏆 Deporte: ${formData.get('sport')}
+📦 Cantidad: ${formData.get('quantity')} uniformes
+📧 Email: ${formData.get('email')}
+📱 Teléfono: ${formData.get('phone')}
+🎨 Colores preferidos: ${colors}
+💭 Mensaje: ${formData.get('message') || 'Sin mensaje adicional'}
+      `;
+      
+      console.log(message);
+      
+      // Mostrar confirmación
+      alert('¡Gracias! Tu solicitud ha sido enviada. Nos contactaremos dentro de 24 horas.');
+      form.reset();
+    });
+  }
+</script>
+
+  <!-- Header -->
+  <section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-sport font-bold mb-4">Contacto</h1>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto">
+        Solicita tu cotización personalizada. Nuestro equipo responderá en 24 horas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+        <!-- Formulario -->
+        <div class="lg:col-span-2">
+          <div class="card bg-gray-50 p-8 shadow-lg">
+            <h2 class="text-3xl font-sport font-bold text-secondary mb-8">Formulario de Cotización</h2>
+            
+            <form id="contactForm" class="space-y-6">
+              <!-- Nombre -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Nombre del equipo *</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Ej: Equipo de Fútbol San Vicente"
+                  class="input input-bordered input-primary"
+                  name="teamName"
+                  required
+                />
+              </div>
+
+              <!-- Deporte -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Deporte *</span>
+                </label>
+                <select class="select select-bordered select-primary" name="sport" required>
+                  <option disabled selected>Selecciona tu deporte</option>
+                  <option>Fútbol</option>
+                  <option>Futsal</option>
+                  <option>Baloncesto</option>
+                  <option>Voleibol</option>
+                  <option>Béisbol</option>
+                  <option>Softball</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+
+              <!-- Cantidad de jugadores -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Cantidad de uniformes *</span>
+                </label>
+                <input
+                  type="number"
+                  placeholder="Ej: 15"
+                  class="input input-bordered input-primary"
+                  name="quantity"
+                  min="1"
+                  required
+                />
+              </div>
+
+              <!-- Email de contacto -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Email *</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="tu@email.com"
+                  class="input input-bordered input-primary"
+                  name="email"
+                  required
+                />
+              </div>
+
+              <!-- Teléfono -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Teléfono / WhatsApp *</span>
+                </label>
+                <input
+                  type="tel"
+                  placeholder="+58 412-1234567"
+                  class="input input-bordered input-primary"
+                  name="phone"
+                  required
+                />
+              </div>
+
+              <!-- Descripción del proyecto -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Describe tu proyecto</span>
+                </label>
+                <textarea
+                  placeholder="Cuéntanos sobre tu equipo, colores preferidos, y cualquier idea de diseño que tengas..."
+                  class="textarea textarea-bordered textarea-primary h-32"
+                  name="message"
+                ></textarea>
+              </div>
+
+              <!-- Archivos adjuntos -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-semibold text-secondary">Adjunta logo o referencia (opcional)</span>
+                </label>
+                <input
+                  type="file"
+                  class="file-input file-input-bordered file-input-primary w-full"
+                  name="attachment"
+                  accept="image/*,.pdf"
+                />
+              </div>
+
+              <!-- Checkbox -->
+              <div class="form-control">
+                <label class="label cursor-pointer justify-start gap-3">
+                  <input type="checkbox" class="checkbox checkbox-primary" name="terms" required />
+                  <span class="label-text">
+                    Autorizo a AndionDesing a contactarme sobre mi cotización
+                  </span>
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-cta w-full">
+                Enviar solicitud de cotización
+              </button>
+
+              <p class="text-xs text-gray-500 text-center">
+                Recibirás respuesta en menos de 24 horas
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Info de contacto directo -->
+        <div class="space-y-8">
+          <!-- WhatsApp -->
+          <div class="card bg-green-50 border-2 border-green-500 p-6">
+            <h3 class="text-xl font-bold text-green-700 mb-3">WhatsApp directo</h3>
+            <p class="text-gray-600 mb-4">
+              Para consultas rápidas, contacta directamente por WhatsApp
+            </p>
+            <a
+              href="https://wa.me/?text=Hola%20AndionDesing%20,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20vuestros%20uniformes%20deportivos%20personalizados"
+              target="_blank"
+              class="btn btn-success w-full"
+            >
+              📱 Abrir WhatsApp
+            </a>
+          </div>
+
+          <!-- Email -->
+          <div class="card bg-blue-50 border-2 border-blue-500 p-6">
+            <h3 class="text-xl font-bold text-blue-700 mb-3">Email</h3>
+            <p class="text-gray-600 mb-4">
+              Envíanos un email con los detalles de tu proyecto
+            </p>
+            <a
+              href="mailto:info@andiondesing.com"
+              class="btn btn-outline btn-primary w-full"
+            >
+              📧 Enviar email
+            </a>
+          </div>
+
+          <!-- Teléfono -->
+          <div class="card bg-purple-50 border-2 border-purple-500 p-6">
+            <h3 class="text-xl font-bold text-purple-700 mb-3">Teléfono</h3>
+            <p class="text-gray-600 mb-4">
+              Llámanos para una consulta inmediata
+            </p>
+            <a
+              href="tel:+584121234567"
+              class="btn btn-outline btn-secondary w-full"
+            >
+              📞 Llamar
+            </a>
+          </div>
+
+          <!-- Horarios -->
+          <div class="card bg-gray-50 border-2 border-gray-300 p-6">
+            <h3 class="text-xl font-bold text-secondary mb-3">Horarios de atención</h3>
+            <div class="space-y-2 text-sm text-gray-600">
+              <p><strong>Lunes a Viernes:</strong> 9:00 AM - 6:00 PM</p>
+              <p><strong>Sábado:</strong> 10:00 AM - 4:00 PM</p>
+              <p><strong>Domingo:</strong> Cerrado</p>
+              <p class="text-xs mt-4 pt-4 border-t border-gray-300">
+                WhatsApp disponible 24/7
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preguntas frecuentes -->
+      <div class="bg-gray-50 rounded-xl p-8 md:p-12">
+        <h2 class="text-3xl font-sport font-bold text-secondary mb-8 text-center">
+          Preguntas frecuentes
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <div class="collapse collapse-plus bg-white border border-gray-200">
+              <input type="radio" name="my-accordion" />
+              <div class="collapse-title font-bold text-secondary">
+                ¿Cuál es el tiempo de entrega?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  El tiempo de entrega varía según la complejidad del diseño y la cantidad de uniformes. 
+                  Típicamente entre 10-15 días hábiles. Te informaremos con precisión al cotizar.
+                </p>
+              </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-white border border-gray-200">
+              <input type="radio" name="my-accordion" />
+              <div class="collapse-title font-bold text-secondary">
+                ¿Puedo hacer cambios al diseño?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  Sí, ofrecemos revisiones ilimitadas hasta que quedes completamente satisfecho 
+                  con el diseño antes de producción.
+                </p>
+              </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-white border border-gray-200">
+              <input type="radio" name="my-accordion" />
+              <div class="collapse-title font-bold text-secondary">
+                ¿Qué incluye la cotización?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  La cotización incluye: diseño personalizado, sublimación de alta calidad, 
+                  materiales premium y empaque profesional.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="collapse collapse-plus bg-white border border-gray-200">
+              <input type="radio" name="my-accordion" />
+              <div class="collapse-title font-bold text-secondary">
+                ¿Hay cantidad mínima de uniformes?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  Para obtener los mejores precios, recomendamos mínimo 10-12 uniformes. 
+                  Consulta para cantidades menores.
+                </p>
+              </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-white border border-gray-200">
+              <input type="radio" name="my-accordion" />
+              <div class="collapse-title font-bold text-secondary">
+                ¿Qué deporte es tu especialidad?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  Nos especializamos en fútbol, futsal, baloncesto, voleibol, béisbol y softball. 
+                  También manejamos otros deportes bajo consulta.
+                </p>
+              </div>
+            </div>
+
+            <div class="collapse collapse-plus bg-white border border-gray-200">
+              <input type="radio" name="my-accordion" />
+              <div class="collapse-title font-bold text-secondary">
+                ¿Cómo comienza el proceso?
+              </div>
+              <div class="collapse-content">
+                <p>
+                  Completa este formulario y nos pondremos en contacto dentro de 24 horas 
+                  para discutir tu proyecto en detalle.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="py-20 bg-gradient-to-r from-primary to-accent text-white">
+    <div class="container mx-auto px-4 text-center max-w-2xl">
+      <h2 class="text-4xl font-sport font-bold mb-6">
+        ¿Listo para transformar tu equipo?
+      </h2>
+      <p class="text-lg text-gray-100 mb-8">
+        Nuestro equipo de expertos está esperando para ayudarte a crear 
+        los uniformes más extraordinarios para tu equipo.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="btn btn-white btn-lg" onclick="document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth' })">
+          ↑ Enviar formulario
+        </button>
+        <a href="https://wa.me/?text=Hola%20AndionDesing%20,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20vuestros%20uniformes%20deportivos%20personalizados" target="_blank" class="btn btn-lg btn-outline">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Handle form submission
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const message = `
+      🎯 Nueva Solicitud de Cotización:
+      Equipo: ${formData.get('teamName')}
+      Deporte: ${formData.get('sport')}
+      Uniformes: ${formData.get('quantity')}
+      Email: ${formData.get('email')}
+      Teléfono: ${formData.get('phone')}
+      Mensaje: ${formData.get('message')}
+      `;
+      
+      // En producción, aquí se enviaría a un backend
+      console.log(message);
+      
+      // Mostrar confirmación
+      alert('¡Gracias! Tu solicitud ha sido enviada. Nos contactaremos dentro de 24 horas.');
+      form.reset();
+    });
+  }
+</script>
